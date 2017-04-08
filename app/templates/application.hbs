@@ -1,5 +1,14 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2 col-sm-offset-4">
+      <h1>My Blargh</h1>
+    </div>
+  </div>
+  <div id="new-blog-post">
+    <h3>New blog post</h3>
+    {{input id="new-blog-title-input" value=newBlogTitle placeholder="Title"}}<br>
+    {{textarea id="new-blog-main-text" value=newBlogMainText placeholder="Body of blog post goes here"}}
+    <br>
+    <button id="create-button" {{action 'createBlogPost' newBlogTitle newBlogMainText}}>Create</button>
+  </div>
+</div>
