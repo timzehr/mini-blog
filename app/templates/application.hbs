@@ -11,4 +11,11 @@
     <br>
     <button id="create-button" {{action 'createBlogPost' newBlogTitle newBlogMainText}}>Create</button>
   </div>
+  {{#each model as |blogPost|}}
+    <div class='blog-post'>
+      <h3>{{blogPost.blogPostTitle}}</h3>
+      <p>{{blogPost.blogPostEntry}}</p>
+      <button class="delete-button" {{action 'deleteBlogPost' blogPost}}>Delete</button>
+    </div>
+  {{/each}}
 </div>
